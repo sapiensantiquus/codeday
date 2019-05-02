@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+flask = "*"
+flask-injector = "*"
+connexion = {extras = ["swagger-ui"],version = "*"}
+gunicorn = "*"
+flask-sqlalchemy = "*"
+flask-marshmallow = "*"
+marshmallow-sqlalchemy = "*"
+marshmallow = "*"
+docker-compose = "*"
+psycopg2-binary = "*"
+flask-jwt = "*"
+
+[requires]
+python_version = "3.7.3"

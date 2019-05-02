@@ -1,0 +1,27 @@
+version: "3.1"
+services:
+  web:
+    container_name: web
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: covermymeds
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      DB_HOST: db
+    ports:
+      - 80:80
+    networks:
+      - codeday
+  db:
+    container_name: db
+    image: postgres:11.2-alpine
+    environment:
+      POSTGRES_PASSWORD: ${PG_USER}
+      POSTGRES_USER: ${PG_PASS}
+    ports:
+      - 5432:5432
+    networks:
+      - codeday
+networks:
+  codeday:
